@@ -9,11 +9,12 @@ import { ThemedView } from '@/components/ThemedView';
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+    headerBackgroundColor={{ light: '#00695C', dark: '#004D40' }}
       headerImage={
         <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
+          source={require('@/assets/images/header_logo.png')}
+          style={styles.headerLogo}
+          contentFit="contain"
         />
       }>
       <ThemedView style={styles.titleContainer}>
@@ -21,34 +22,30 @@ export default function HomeScreen() {
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
+        <ThemedText type="subtitle">About RK's Brainstorm</ThemedText>
+        <ThemedText style={styles.aboutText}>
+          <ThemedText type="defaultSemiBold">RK's Brainstorm</ThemedText> is well known <ThemedText type="defaultSemiBold">Training – Consulting – Outsourcing</ThemedText> organization which is impacting qualitative training programs like <ThemedText type="defaultSemiBold">leadership skills, communication skills, managerial skills</ThemedText> to MNC's and C2C, <ThemedText type="defaultSemiBold">finishing school programs</ThemedText> to corporate companies and top educational institutions in India.
+        </ThemedText>
+        <ThemedText style={styles.aboutText}>
+          Our experienced <ThemedText type="defaultSemiBold">training team</ThemedText> will definitely groom the Employees and students as per <ThemedText type="defaultSemiBold">BU(Business Unit)</ThemedText> requirements.
+        </ThemedText>
+        <ThemedText style={styles.aboutText}>
+          We partner with our clients to expand their business potential by providing solutions in <ThemedText type="defaultSemiBold">Executive Search & Selection, Middle Management Hiring, Project Based Hiring and Recruitment Process Outsourcing</ThemedText> through integrated suite of leadership services. With our <ThemedText type="defaultSemiBold">six years</ThemedText> long knowledge expertise in the domain, we have been successfully able to deliver solutions for all kind of global and local business industry specific demands.
+        </ThemedText>
+        <ThemedText style={styles.aboutText}>
+          Our strength lies in our <ThemedText type="defaultSemiBold">multifaceted team of professional consultants</ThemedText> holding credentials of being highly specialized and experienced in the industry/sectors they serve. We are associated with <ThemedText type="defaultSemiBold">best of talent</ThemedText> which are capable of harnessing new pool of talents. Our workforce culture is equipped with <ThemedText type="defaultSemiBold">new technology and techniques</ThemedText> to maintain reliable quality assurance. We understand our responsibility to change our mechanism from time to time so as to keep pace with the <ThemedText type="defaultSemiBold">changing employment scenario and skill sets demand</ThemedText>. Hence, our team is oriented towards taking timely demand and needs analysis, available and upcoming skill set in the market, talent review etc. to provide <ThemedText type="defaultSemiBold">unparallel quality service</ThemedText> to our clients.
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
+        <ThemedText type="subtitle">Mission</ThemedText>
+        <ThemedText style={styles.aboutText}>
+          Our mission is to make the difference in the lives of the <ThemedText type="defaultSemiBold">Employees, students, Job aspirants, professionals</ThemedText> by helping them develop a <ThemedText type="defaultSemiBold">holistic personality</ThemedText> by providing essential Services on required areas to succeed on their <ThemedText type="defaultSemiBold">Professional life</ThemedText>.
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
+        <ThemedText type="subtitle">Vision</ThemedText>
+        <ThemedText style={styles.aboutText}>
+          The vision of <ThemedText type="defaultSemiBold">RK's Brainstorm</ThemedText> is to become the <ThemedText type="defaultSemiBold">trusted brand</ThemedText> for personal transformation through <ThemedText type="defaultSemiBold">Training - Consulting - Outsourcing</ThemedText> and remembered forever for its <ThemedText type="defaultSemiBold">outstanding contribution</ThemedText> for a better Society.
         </ThemedText>
       </ThemedView>
     </ParallaxScrollView>
@@ -65,11 +62,17 @@ const styles = StyleSheet.create({
     gap: 8,
     marginBottom: 8,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  headerLogo: {
+    width: '100%',
+    height: '100%',
+    maxHeight: 100,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
+  aboutText: {
+    marginBottom: 16,
+    lineHeight: 20,
   },
 });
