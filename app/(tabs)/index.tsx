@@ -1,25 +1,56 @@
 import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-    headerBackgroundColor={{ light: '#00695C', dark: '#004D40' }}
-      headerImage={
+    <ThemedView>
+       <View style={styles.container}>
         <Image
-          source={require('@/assets/images/header_logo.png')}
-          style={styles.headerLogo}
-          contentFit="contain"
+          source={require('@/assets/images/logo_right.jpeg')}
+          style={styles.scrollImage}
+          resizeMode="cover"
         />
-      }>
+        <Image
+          source={require('@/assets/images/logo_center.jpeg')}
+          style={styles.scrollImage}
+          resizeMode="contain"
+        />
+        <Image
+          source={require('@/assets/images/logo_left.jpeg')}
+          style={styles.scrollImage}
+          resizeMode="cover"
+        />
+      </View>
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
+      </ThemedView>
+      <ThemedView style={styles.scrollContainer}>
+        <ScrollView 
+          horizontal 
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.scrollContent}
+        >
+          <Image 
+            source={{ uri: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80' }} 
+            style={styles.scrollImage} 
+            resizeMode="cover"
+          />
+          <Image 
+            source={{ uri: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80' }} 
+            style={styles.scrollImage} 
+            resizeMode="cover"
+          />
+          <Image 
+            source={{ uri: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80' }} 
+            style={styles.scrollImage} 
+            resizeMode="cover"
+          />
+        </ScrollView>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">About RK's Brainstorm</ThemedText>
@@ -48,7 +79,7 @@ export default function HomeScreen() {
           The vision of <ThemedText type="defaultSemiBold">RK's Brainstorm</ThemedText> is to become the <ThemedText type="defaultSemiBold">trusted brand</ThemedText> for personal transformation through <ThemedText type="defaultSemiBold">Training - Consulting - Outsourcing</ThemedText> and remembered forever for its <ThemedText type="defaultSemiBold">outstanding contribution</ThemedText> for a better Society.
         </ThemedText>
       </ThemedView>
-    </ParallaxScrollView>
+    </ThemedView>
   );
 }
 
@@ -62,6 +93,19 @@ const styles = StyleSheet.create({
     gap: 8,
     marginBottom: 8,
   },
+  scrollContainer: {
+    marginVertical: 16,
+  },
+  scrollContent: {
+    paddingHorizontal: 16,
+    gap: 12,
+  },
+  scrollImage: {
+    width: 280,
+    height: 160,
+    borderRadius: 8,
+    marginRight: 12,
+  },
   headerLogo: {
     width: '100%',
     height: '100%',
@@ -74,5 +118,11 @@ const styles = StyleSheet.create({
   aboutText: {
     marginBottom: 16,
     lineHeight: 20,
+  },
+  container: {
+    flexDirection: "row",   // horizontal alignment
+    justifyContent: "center", // center horizontally
+    alignItems: "center",   // align vertically
+    gap: 10,                // spacing between images (RN >= 0.71)
   },
 });

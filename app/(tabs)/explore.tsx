@@ -198,29 +198,16 @@ export default function ExploreScreen() {
               placeholderTextColor="#999"
             />
           </ThemedView>
-          
-          <View style={styles.row}>
-            <View style={[styles.inputContainer, styles.halfInput]}>
-              <Ionicons name="briefcase-outline" size={18} color="#666" style={styles.searchIcon} />
-              <TextInput
-                style={[styles.input, styles.halfInputText]}
-                placeholder="Experience"
-                value={search.experience}
-                onChangeText={(text) => setSearch({...search, experience: text})}
-                placeholderTextColor="#999"
-              />
-            </View>
-            <View style={[styles.inputContainer, styles.halfInput, {marginLeft: 8}]}>
-              <Ionicons name="location-outline" size={18} color="#666" style={styles.searchIcon} />
-              <TextInput
-                style={[styles.input, styles.halfInputText]}
-                placeholder="Location"
-                value={search.location}
-                onChangeText={(text) => setSearch({...search, location: text})}
-                placeholderTextColor="#999"
-              />
-            </View>
-          </View>
+          <ThemedView style={styles.inputContainer}>
+            <Ionicons name="search" size={20} color="#666" style={styles.searchIcon} />
+            <TextInput
+              style={styles.input}
+              placeholder="Location"
+              value={search.location}
+              onChangeText={(text) => setSearch({...search, location: text})}
+              placeholderTextColor="#999"
+            />
+          </ThemedView>
         </View>
       }
     >
