@@ -7,8 +7,8 @@ import { ThemedView } from '@/components/ThemedView';
 
 export default function HomeScreen() {
   return (
-    <ThemedView>
-       <View style={styles.container}>
+    <ThemedView style={{ flex: 1 }}>
+       <View style={[styles.container, { backgroundColor: '#00695C', paddingVertical: 16 }]}>
         <Image
           source={require('@/assets/images/logo_right.jpeg')}
           style={styles.scrollImage}
@@ -25,8 +25,13 @@ export default function HomeScreen() {
           resizeMode="cover"
         />
       </View>
+      <ScrollView 
+        style={{ flex: 1,padding:16 }}
+        contentContainerStyle={{ paddingBottom: 40 }}
+        showsVerticalScrollIndicator={false}
+      >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
+        <ThemedText type="title">Welcome to the Mala Community Portal!</ThemedText>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.scrollContainer}>
@@ -53,32 +58,50 @@ export default function HomeScreen() {
         </ScrollView>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">About RK's Brainstorm</ThemedText>
+        <ThemedText type="subtitle">Connect - Learn - Grow</ThemedText>
         <ThemedText style={styles.aboutText}>
-          <ThemedText type="defaultSemiBold">RK's Brainstorm</ThemedText> is well known <ThemedText type="defaultSemiBold">Training – Consulting – Outsourcing</ThemedText> organization which is impacting qualitative training programs like <ThemedText type="defaultSemiBold">leadership skills, communication skills, managerial skills</ThemedText> to MNC's and C2C, <ThemedText type="defaultSemiBold">finishing school programs</ThemedText> to corporate companies and top educational institutions in India.
+          We extend a warm welcome to you on this platform, created exclusively for the Mala community of Andhra Pradesh. This initiative has been envisioned to serve as a common ground where our people unite to celebrate identity, exchange knowledge, and journey toward collective progress.
         </ThemedText>
+      </ThemedView>
+
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">Our Purpose</ThemedText>
         <ThemedText style={styles.aboutText}>
-          Our experienced <ThemedText type="defaultSemiBold">training team</ThemedText> will definitely groom the Employees and students as per <ThemedText type="defaultSemiBold">BU(Business Unit)</ThemedText> requirements.
+        For generations, the Mala community has stood tall with resilience, determination, and an unwavering spirit of unity. This website is a step towards further strengthening those foundations—by providing a space where we can connect meaningfully, learn from one another, and grow together in spirit, knowledge, and opportunity.
         </ThemedText>
+      </ThemedView>
+
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">What We Aspire To Achieve</ThemedText>
         <ThemedText style={styles.aboutText}>
-          We partner with our clients to expand their business potential by providing solutions in <ThemedText type="defaultSemiBold">Executive Search & Selection, Middle Management Hiring, Project Based Hiring and Recruitment Process Outsourcing</ThemedText> through integrated suite of leadership services. With our <ThemedText type="defaultSemiBold">six years</ThemedText> long knowledge expertise in the domain, we have been successfully able to deliver solutions for all kind of global and local business industry specific demands.
+          <ThemedText type="defaultSemiBold">• Connection:</ThemedText> Bringing together members across regions to build strong networks rooted in solidarity and mutual respect.
+          {'\n\n'}
+          <ThemedText type="defaultSemiBold">• Learning:</ThemedText> Fostering knowledge-sharing, education, and awareness that empower individuals and inspire future generations.
+          {'\n\n'}
+          <ThemedText type="defaultSemiBold">• Growth:</ThemedText> Encouraging avenues for professional, social, and cultural development that uplift both individuals and the entire community.
+          {'\n\n'}
+          <ThemedText type="defaultSemiBold">• Cultural Pride:</ThemedText> Honouring our traditions, values, and achievements while embracing progress in every sphere of life.
         </ThemedText>
+      </ThemedView>
+
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">Our Vision</ThemedText>
         <ThemedText style={styles.aboutText}>
-          Our strength lies in our <ThemedText type="defaultSemiBold">multifaceted team of professional consultants</ThemedText> holding credentials of being highly specialized and experienced in the industry/sectors they serve. We are associated with <ThemedText type="defaultSemiBold">best of talent</ThemedText> which are capable of harnessing new pool of talents. Our workforce culture is equipped with <ThemedText type="defaultSemiBold">new technology and techniques</ThemedText> to maintain reliable quality assurance. We understand our responsibility to change our mechanism from time to time so as to keep pace with the <ThemedText type="defaultSemiBold">changing employment scenario and skill sets demand</ThemedText>. Hence, our team is oriented towards taking timely demand and needs analysis, available and upcoming skill set in the market, talent review etc. to provide <ThemedText type="defaultSemiBold">unparallel quality service</ThemedText> to our clients.
+        To nurture a progressive Mala community—united by heritage, inspired by knowledge, and driven toward excellence—so that every individual finds both strength and opportunity within the collective.
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Mission</ThemedText>
+        <ThemedText type="subtitle">Join Hands in the Journey</ThemedText>
         <ThemedText style={styles.aboutText}>
-          Our mission is to make the difference in the lives of the <ThemedText type="defaultSemiBold">Employees, students, Job aspirants, professionals</ThemedText> by helping them develop a <ThemedText type="defaultSemiBold">holistic personality</ThemedText> by providing essential Services on required areas to succeed on their <ThemedText type="defaultSemiBold">Professional life</ThemedText>.
+        This platform belongs to all of us. It is more than a website—it is a movement toward empowerment, solidarity, and shared success. Together, let us ensure that the Mala community continues to shine as a beacon of resilience and growth.
         </ThemedText>
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Vision</ThemedText>
-        <ThemedText style={styles.aboutText}>
-          The vision of <ThemedText type="defaultSemiBold">RK's Brainstorm</ThemedText> is to become the <ThemedText type="defaultSemiBold">trusted brand</ThemedText> for personal transformation through <ThemedText type="defaultSemiBold">Training - Consulting - Outsourcing</ThemedText> and remembered forever for its <ThemedText type="defaultSemiBold">outstanding contribution</ThemedText> for a better Society.
+        <ThemedText type="subtitle">Let us connect, let us learn, and let us grow—together, for a brighter tomorrow.
         </ThemedText>
       </ThemedView>
+      </ScrollView>
     </ThemedView>
   );
 }
